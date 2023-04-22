@@ -42,6 +42,15 @@ html {
     }
 }
 
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
 /* Modal */
 .modal {
     display: flex;
@@ -50,6 +59,7 @@ html {
     right: 0;
     bottom: 0;
     left: 0;
+    animation: fadeIn linear 0.1s;
 }
 
 .modal__overlay {
@@ -60,30 +70,42 @@ html {
 }
 
 .modal__body {
-    background-color: var(--white-color);
+    --growth-from: 0.;
+    --growth-to: 1;
     margin: auto;
     position: relative;
     z-index: 1;
-    border-radius: 5px;
+    animation: growth linear 0.1s;
 }
 
 
 /* Button style */
 .btn {
-    height: 36px;
+    height: 34px;
     min-width: 142px;
     text-decoration: none;
     border: none;
     border-radius: 2px;
     font-size: 1.5rem;
-    padding: 0;
+    padding: 0 12px;
     outline: none;
     cursor: pointer;
     color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
 }
 
-.btn:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+.btn.btn--normal:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.btn.btn--size-s {
+    height: 32px;
+    font-size: 12px;
+    padding: 0 8px;
 }
 
 .btn.btn--primary {
