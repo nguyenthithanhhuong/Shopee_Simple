@@ -1,9 +1,14 @@
+/* Variable */
 :root {
+    --primary-color: #ee4d2d;
     --white-color: #fff;
     --black-color: #000;
     --text-color: #333;
-    --primary-color: #ee4d2d;
     --border-color: #dbdbdb;
+
+    --header-height: 120px;
+    --navbar-height: 48px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
 }
 
 * {
