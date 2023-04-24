@@ -12,6 +12,7 @@
 }
 
 .header__navbar-list {
+    display: flex;
     list-style: none;
     padding-left: 0;
     margin-top: 4px 0 0 0;
@@ -21,6 +22,95 @@
     margin: 0 8px;
     position: relative;
     min-height: 26px;
+}
+
+.header__navbar-user {
+    position: relative;
+    display: flex;
+    justify-items: center;
+}
+
+.header__navbar-user-img {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header__navbar-user-name {
+    margin-left: 8px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white-color);
+    line-height: 22px;
+}
+
+.header__navbar-user:hover .header__navbar-user-menu {
+    display: block;
+    animation: fadeIn ease-in 0.2s;
+}
+
+.header__navbar-user-menu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 4px);
+    right: 0;
+    padding-left: 0;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    width: 160px;
+    list-style: none;
+    box-shadow: 0 1px 2px #e0e0e0;
+}
+
+.header__navbar-user-menu::before {
+    content: "";
+    position: absolute;
+    top: -36px;
+    right: 12px;
+    border-width: 24px 28px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    cursor: pointer;
+}
+
+.header__navbar-user-menu::after {
+    content: "";
+    border-style: solid;
+    height: 20px;
+    width: 120px;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    border: none;
+}
+
+.header__navbar-user-item {
+
+}
+
+.header__navbar-user-item a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 12px 16px;
+}
+
+.header__navbar-user-item a:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.header__navbar-user-item a:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.header__navbar-user-item a:hover {
+    background-color: #fafafa;
 }
 
 .header__navbar-item--has-qr:hover .header__qr{
@@ -43,7 +133,7 @@
 .header__navbar-item,
 .header__navbar-item-link,
 .header__navbar-icon-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
 }
 
