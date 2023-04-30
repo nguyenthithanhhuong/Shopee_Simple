@@ -199,7 +199,7 @@ html {
     color: var(--primary-color);
 }
 
-/* pagination */
+/* Pagination */
 .pagination {
     display: flex;
     justify-content: center;
